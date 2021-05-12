@@ -12,7 +12,7 @@ class ListAllUsersUseCase {
     const user = this.usersRepository.findById(user_id);
 
     if (user === undefined || !user.admin) {
-      throw new Error("Not allowed to list users");
+      throw new Error("User not allowed to list users.");
     }
 
     const users = this.usersRepository.list();
